@@ -71,6 +71,11 @@ function loaderAnimation() {
       delay: -0.5,
       ease: Circ.easeInOut,
       onComplete: function () {
+        gsap.to("#home", {
+          opacity: 1,
+          duration: 1.8,
+          ease: Circ.easeInOut
+        })
         animateHomepage();
       },
     });

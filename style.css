@@ -15,8 +15,15 @@
     font-family: "Gilroy";
 }
 
+@media(max-width: 600px) {
+    * {
+        overflow-x: hidden;
+    }
+}
+
 html,
 body {
+    /* overflow-x: hidden; */
     scroll-behavior: smooth;
     width: 100%;
     height: 100%;
@@ -34,6 +41,17 @@ body {
     width: 100%;
     height: 2000vh;
     position: fixed;
+    overflow-y: scroll;
+}
+
+@media(max-width: 768px) {
+    #main {
+        position: relative;
+    }
+}
+
+#main::-webkit-scrollbar {
+    display: none;
 }
 
 #loader {
@@ -57,6 +75,7 @@ body {
     text-transform: uppercase;
     font-size: 1vw;
     font-weight: 300;
+    overflow-x: hidden;
 }
 
 #loader h1 {
@@ -98,6 +117,7 @@ body {
 #home {
     width: 100%;
     height: 150vh;
+    opacity: 0;
     background-color: #FCFAF8;
     overflow: visible;
 }
@@ -185,6 +205,16 @@ body {
 .row h1 {
     font-size: 12vw;
     font-weight: 600;
+    overflow: visible !important;
+}
+.row h1::-webkit-scrollbar {
+    display: none !important;
+}
+
+@media(max-width: 600px) {
+    #okokokokokokok {
+        margin-right: -3vw !important;
+    }
 }
 
 @media(max-width: 850px) {
@@ -214,19 +244,46 @@ body {
 
 @media(max-width: 550px) {
     #imagery {
-        margin-top: 0vw !important;
+        margin-top: -4vw !important;
     }
 }
 
 @media(max-width: 450px) {
     #imagery {
-        margin-top: -3vw !important;
+        margin-top: -8vw !important;
     }
 }
 
 @media(max-width: 350px) {
     #imagery {
-        margin-top: -13vw !important;
+        margin-top: -25vw !important;
+    }
+}
+
+@media(max-width: 275px) {
+    #imagery {
+        margin-top: -28vw !important;
+    }
+}
+
+@media(max-width: 220px) {
+    #imagery {
+        margin-top: -41vw !important;
+    }
+}
+
+@media(max-width: 400px) {
+    #moushamPatra {
+        margin-top: -10vw !important;
+    }
+    #help {
+        margin-top: -20vh !important;
+    }
+}
+
+@media(max-width: 190px) {
+    #imagery {
+        margin-top: -60vw !important;
     }
 }
 
@@ -283,12 +340,17 @@ polyline {
 }
 
 #imgrig {
+    overflow: visible !important;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     width: 60%;
     height: 300px;
+}
+
+#imgrig::-webkit-scrollbar {
+    display: none !important;
 }
 
 #imgrig .imgcntnr {
@@ -327,6 +389,7 @@ polyline {
 }
 
 #work {
+    overflow: hidden;
     transition: background-color cubic-bezier(0.19, 1, 0.22, 1) 2s;
     padding-top: 150px;
     position: relative;
@@ -353,7 +416,7 @@ polyline {
 
 @media(max-width: 650px) {
     #help {
-        top: -20vw;
+        top: -10vw;
     }
     #help-svg {
         margin-bottom: 3vh !important;
@@ -362,7 +425,7 @@ polyline {
 
 @media(max-width: 400px) {
     #help {
-        top: -50vw !important;
+        top: -60vw !important;
     }
     #help-svg {
         margin-bottom: 3vh !important;
@@ -371,7 +434,7 @@ polyline {
 
 @media(max-width: 500px) {
     #help {
-        top: -35vw;
+        top: -25vw;
     }
     #help-svg {
         margin-bottom: 1vh !important;
@@ -612,22 +675,40 @@ polyline {
         margin-top: 8vh;
     }
     .workrow {
-        margin-top: -63vh !important;
+        margin-top: -65vh !important;
     }
 }
 
 @media(max-width: 400px) {
+    #help svg {
+        margin-top: 24vh;
+    }
     #help hr {
         margin-top: 5vh;
     }
     .workrow {
-        margin-top: -70vh !important;
+        margin-top: -73vh !important;
     }
 }
 
 @media(max-width: 300px) {
+    #work {
+        margin-top: -20vw;
+    }
+    #help {
+        margin-top: -10vh;
+    }
     #images {
         margin-top: 0vh;
+    }
+    #help svg {
+        margin-top: -4vh;
+    }
+    #help h5 {
+        margin-top: -2vh;
+    }
+    .workrow {
+        margin-top: -85vh !important;
     }
 }
 
