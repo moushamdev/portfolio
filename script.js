@@ -79,8 +79,14 @@ function loaderAnimation() {
           ease: Circ.easeInOut,
         });
         animateHomepage();
+        makeVisible();
       },
     });
+}
+
+function makeVisible() {
+  document.getElementById("home").style.opacity = 1;
+  document.getElementById("#main").style.overflowY = "visible";
 }
 
 function animateHomepage() {
@@ -167,3 +173,26 @@ valueSetters();
 loaderAnimation();
 locoInitialize();
 cardHoverEffect();
+
+
+
+
+
+
+
+
+document.querySelectorAll('.pricing-btn').forEach(button => {
+  button.addEventListener('mouseenter', () => {
+      gsap.to(button, { backgroundColor: '#14CF93', duration: 0.3 });
+  });
+  button.addEventListener('mouseleave', () => {
+      gsap.to(button, { backgroundColor: '#B4BACF', duration: 0.3 });
+  });
+});
+
+document.querySelector('.quote-btn').addEventListener('mouseenter', () => {
+  gsap.to('.quote-btn', { backgroundColor: '#10b07d', duration: 0.3 });
+});
+document.querySelector('.quote-btn').addEventListener('mouseleave', () => {
+  gsap.to('.quote-btn', { backgroundColor: '#14CF93', duration: 0.3 });
+});
