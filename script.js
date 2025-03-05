@@ -86,7 +86,6 @@ function loaderAnimation() {
 
 function makeVisible() {
   document.getElementById("home").style.opacity = 1;
-  document.getElementById("#main").style.overflowY = "visible";
 }
 
 function animateHomepage() {
@@ -124,11 +123,15 @@ function animateSvg() {
 
 function locoInitialize() {
   const scroll = new LocomotiveScroll({
-    el: document.querySelector("#main"),
-    smooth: true,
+      el: document.querySelector("#main"),
+      smooth: true
   });
-}
 
+  // Update Locomotive Scroll on window resize
+  setTimeout(() => {
+      scroll.update();
+  }, 1000);
+}
 function cardHoverEffect() {
   document.querySelectorAll(".cnt").forEach(function (cnt) {
     var showingImage;
