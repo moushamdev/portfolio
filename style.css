@@ -38,7 +38,7 @@ body {
 
 #main {
     width: 100%;
-    height: 790vh;
+    height: 100vh;
     overflow-y: scroll !important;
     position: relative;
 }
