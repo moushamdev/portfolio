@@ -3,7 +3,9 @@ var d = new Date();
 var hour = d.getHours();
 var minutes = d.getMinutes();
 
-document.getElementById("localTime").innerHTML = `MY LOCAL TIME ${hour}:${minutes}`;
+document.getElementById(
+  "localTime"
+).innerHTML = `MY LOCAL TIME ${hour}:${minutes}`;
 
 function revealToSpan() {
   document.querySelectorAll(".reveal").forEach(function (elem) {
@@ -74,37 +76,37 @@ function loaderAnimation() {
         gsap.to("#home", {
           opacity: 1,
           duration: 1.8,
-          ease: Circ.easeInOut
-        })
+          ease: Circ.easeInOut,
+        });
         animateHomepage();
       },
     });
 }
 
 function animateHomepage() {
-    var tl = gsap.timeline();
-  
-    tl.to("#nav a", {
+  var tl = gsap.timeline();
+
+  tl.to("#nav a", {
+    y: 0,
+    opacity: 1,
+    stagger: 0.05,
+    ease: Expo.easeInOut,
+  })
+    .to("#home .parent .child", {
       y: 0,
-      opacity: 1,
-      stagger: 0.05,
+      stagger: 0.1,
+      duration: 1,
       ease: Expo.easeInOut,
     })
-      .to("#home .parent .child", {
-        y: 0,
-        stagger: .1,
-        duration: 1,
-        ease: Expo.easeInOut,
-      })
-      .to("#home .row img", {
-        opacity: 1,
-        delay: -.5,
-        ease: Expo.easeInOut,
-        onComplete: function () {
-          animateSvg();
-        },
-      });
-  }
+    .to("#home .row img", {
+      opacity: 1,
+      delay: -0.5,
+      ease: Expo.easeInOut,
+      onComplete: function () {
+        animateSvg();
+      },
+    });
+}
 
 function animateSvg() {
   gsap.to("#Visual>g>g>path, #Visual>g>g>polyline", {
@@ -115,46 +117,50 @@ function animateSvg() {
 }
 
 function locoInitialize() {
-    const scroll = new LocomotiveScroll({
-        el: document.querySelector('#main'),
-        smooth: true
-    });
+  const scroll = new LocomotiveScroll({
+    el: document.querySelector("#main"),
+    smooth: true,
+  });
 }
 
 function cardHoverEffect() {
-    document.querySelectorAll(".cnt")
-    .forEach(function(cnt){
+  document.querySelectorAll(".cnt").forEach(function (cnt) {
+    var showingImage;
+    cnt.addEventListener("mousemove", function (dets) {
+      console.log(
+        "Cursor " + document.querySelector("#cursor").style.top,
+        document.querySelector("#cursor").style.left
+      );
+      console.log("Client " + dets.chientX, dets.clientY);
+      console.log("Page " + dets.pageX, dets.pageY);
+      let reqvar = dets.clientY;
+      showingImage = dets.target;
+      if (window.innerWidth > 768) {
+        document.querySelector("#cursor").children[
+          dets.target.dataset.index
+        ].style.opacity = 1;
+        document.querySelector("#cursor").children[
+          dets.target.dataset.index
+        ].style.transform = `translate(${dets.pageX}px, ${reqvar}px)`;
+      }
 
-        var showingImage;
-        cnt.addEventListener("mousemove", function(dets) {
-          console.log("Cursor " + document.querySelector("#cursor").style.top, document.querySelector("#cursor").style.left)
-          console.log("Client " + dets.chientX, dets.clientY);
-          console.log("Page " + dets.pageX, dets.pageY);
-          let reqvar = dets.pageY + window.innerHeight*2;
-          // document.querySelector("#cursor").children[dets.target.dataset.index].style.opacity = 1;
-            showingImage = dets.target;
-            // document.querySelector("#cursor").children[dets.target.dataset.index].style.transform = `translate(${dets.pageX}px, ${reqvar}px)`;
+      showingImage.style.filter = "grayscale(1)";
 
-            showingImage.style.filter = "grayscale(1)";
+      document.querySelector("#work").style.backgroundColor =
+        "#" + dets.target.dataset.color;
+    });
 
-            document.querySelector("#work").style.backgroundColor = "#" + dets.target.dataset.color;
-        })
-
-        cnt.addEventListener("mouseleave", function(dets) {
-            document.querySelector("#cursor").children[showingImage.dataset.index].style.opacity = 0;
-            showingImage.style.filter = "grayscale(0)"
-            document.querySelector("#work").style.backgroundColor = "#F2F2F2";
-        })
-        
-    })
+    cnt.addEventListener("mouseleave", function (dets) {
+      document.querySelector("#cursor").children[
+        showingImage.dataset.index
+      ].style.opacity = 0;
+      showingImage.style.filter = "grayscale(0)";
+      document.querySelector("#work").style.backgroundColor = "#F2F2F2";
+    });
+  });
 }
 
-
-
-cardHoverEffect();  // Call the function to initialize the hover effect
-
-
-
+cardHoverEffect(); // Call the function to initialize the hover effect
 
 revealToSpan();
 valueSetters();

@@ -23,7 +23,6 @@
 
 html,
 body {
-    /* overflow-x: hidden; */
     scroll-behavior: smooth;
     width: 100%;
     height: 100%;
@@ -41,7 +40,6 @@ body {
     width: 100%;
     height: 2000vh;
     position: fixed;
-    overflow-y: scroll;
 }
 
 @media(max-width: 768px) {
@@ -117,7 +115,7 @@ body {
 #home {
     width: 100%;
     height: 150vh;
-    opacity: 0;
+    opacity: 1;
     background-color: #FCFAF8;
     overflow: visible;
 }
@@ -203,10 +201,11 @@ body {
 }
 
 .row h1 {
-    font-size: 12vw;
+    font-size: 11vw;
     font-weight: 600;
     overflow: visible !important;
 }
+
 .row h1::-webkit-scrollbar {
     display: none !important;
 }
@@ -276,6 +275,7 @@ body {
     #moushamPatra {
         margin-top: -10vw !important;
     }
+
     #help {
         margin-top: -20vh !important;
     }
@@ -369,21 +369,21 @@ polyline {
 
 #imgrig .imgcntnr:nth-child(1) {
     transform: translate(-40%, -8%) rotate(-20deg);
-    background-image: url(assets/images/abt1.jpg);
+    background-image: url(assets/images/abt1.png);
     background-size: cover;
     background-position: center;
 }
 
 #imgrig .imgcntnr:nth-child(2) {
     transform: translate(-15%, 0%) rotate(-15deg);
-    background-image: url(assets/images/abt2.jpg);
+    background-image: url(assets/images/abt2.png);
     background-size: cover;
     background-position: center;
 }
 
 #imgrig .imgcntnr:nth-child(3) {
     transform: translate(20%, 10%) rotate(-5deg);
-    background-image: url(assets/images/abt3.jpg);
+    background-image: url(assets/images/abt3.png);
     background-size: cover;
     background-position: center;
 }
@@ -409,6 +409,7 @@ polyline {
     #work {
         margin-top: -10vw;
     }
+
     #help-svg {
         margin-left: 20vw;
     }
@@ -418,6 +419,7 @@ polyline {
     #help {
         top: -10vw;
     }
+
     #help-svg {
         margin-bottom: 3vh !important;
     }
@@ -427,6 +429,7 @@ polyline {
     #help {
         top: -60vw !important;
     }
+
     #help-svg {
         margin-bottom: 3vh !important;
     }
@@ -436,6 +439,7 @@ polyline {
     #help {
         top: -25vw;
     }
+
     #help-svg {
         margin-bottom: 1vh !important;
     }
@@ -500,20 +504,134 @@ polyline {
 .cnt img {
     animation: filter cubic-bezier(0.19, 1, 0.22, 1) 2s;
     width: 105%;
+    object-position: top;
 }
 
 .cnt1 {
     width: 55%;
+    height: 150vh;
 }
 
 .cnt2 {
     width: 28%;
+    height: 90vh;
+}
+
+@media(max-width: 950px) {
+    .cnt1 {
+        height: 140vh;
+    }
+    .cnt2 {
+        height: 80vh;
+    }
+}
+
+@media(max-width: 850px) {
+    .cnt1 {
+        height: 120vh;
+    }
+    .cnt2 {
+        height: 75vh;
+    }
+}
+
+@media(max-width: 750px) {
+    .cnt1 {
+        height: 100vh;
+    }
+    .cnt2 {
+        height: 60vh;
+    }
+}
+
+@media(max-width: 650px) {
+    .cnt1 {
+        height: 80vh;
+    }
+    .cnt2 {
+        height: 45vh;
+    }
+}
+
+@media(max-width: 550px) {
+    .cnt1 {
+        height: 68vh;
+    }
+    .cnt2 {
+        height: 39vh;
+    }
+}
+
+@media(max-width: 450px) {
+    .cnt1 {
+        height: 55vh;
+    }
+    .cnt2 {
+        height: 32vh;
+    }
+}
+
+@media(max-width: 350px) {
+    .cnt1 {
+        height: 45vh;
+    }
+    .cnt2 {
+        height: 25vh;
+    }
+}
+
+@media(max-width: 250px) {
+    .cnt1 {
+        height: 35vh;
+    }
+    .cnt2 {
+        height: 20vh;
+    }
+}
+
+.work_details {
+    display: flex;
+    position: absolute;
+    z-index: 99999999999999999999999999999999999999999999;
+    top: 90%;
+    left: 7%;
+}
+
+.work_name h3 {
+    font-size: 4vw;
+}
+
+.work_name {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: #FFFFFF;
+    padding: 1vw 3vw;
+    border-radius: 4vw;
+    margin-right: 2vw;
+    box-shadow: 0px 0px 12px #bebaba;
+}
+
+.work_details_arrow {
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    height: 6vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6vw;
+    box-shadow: 0px 0px 12px #bebaba;
+}
+
+.work_details #arrow {
+    height: 3vw;
+    width: 3vw;
 }
 
 #cursor {
     position: absolute;
     width: 17vw;
-    top: 300vh;
+    top: 145vw;
     left: 0;
     z-index: 99999999999999;
 }
@@ -626,6 +744,7 @@ polyline {
     #help hr {
         margin-top: 15vh;
     }
+
     .workrow {
         margin-top: -15vh;
     }
@@ -641,6 +760,7 @@ polyline {
     #help hr {
         margin-top: 8vh;
     }
+
     .workrow {
         margin-top: -35vh;
     }
@@ -650,6 +770,7 @@ polyline {
     #help hr {
         margin-top: 2vh;
     }
+
     .workrow {
         margin-top: -37vh;
     }
@@ -659,6 +780,7 @@ polyline {
     #help hr {
         margin-top: -5vh;
     }
+
     .workrow {
         margin-top: -50vh !important;
     }
@@ -674,6 +796,7 @@ polyline {
     #help hr {
         margin-top: 8vh;
     }
+
     .workrow {
         margin-top: -65vh !important;
     }
@@ -683,9 +806,11 @@ polyline {
     #help svg {
         margin-top: 24vh;
     }
+
     #help hr {
         margin-top: 5vh;
     }
+
     .workrow {
         margin-top: -73vh !important;
     }
@@ -695,18 +820,23 @@ polyline {
     #work {
         margin-top: -20vw;
     }
+
     #help {
         margin-top: -10vh;
     }
+
     #images {
         margin-top: 0vh;
     }
+
     #help svg {
         margin-top: -4vh;
     }
+
     #help h5 {
         margin-top: -2vh;
     }
+
     .workrow {
         margin-top: -85vh !important;
     }
