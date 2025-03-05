@@ -802,9 +802,72 @@ polyline {
     }
 }
 
+@media(max-width: 350px) {
+    #imglef {
+        position: relative;
+        padding-top: 200vw;
+        top: 15vw;
+    }
+}
+@media(max-width: 228px) {
+    #imglef {
+        position: relative;
+        padding-top: 200vw;
+        top: 25vw;
+    }
+}
+@media(max-width: 219px) {
+    #imglef {
+        position: relative;
+        padding-top: 200vw;
+        top: 40vw;
+    }
+}
+
+@media(max-width: 193px) {
+    #imglef {
+        position: relative;
+        padding-top: 200vw;
+        top: 70vw;
+    }
+}
+
+@media(max-width: 350px) {
+    #imglef {
+        margin-bottom: 28px;
+    }
+}
+
+@media(max-width: 345px) {
+    #imglef {
+        position: relative;
+        top: 20vw;
+        margin-bottom: 80px;
+    }
+    #imgrig {
+        position: relative;
+        top:20vw;
+    }
+}
+
 @media(max-width: 400px) {
     #help svg {
         margin-top: 24vh;
+    }
+
+    #imagery {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #imglef {
+        transform: scale(2.5);
+        padding-top: 10vw;
+        margin-bottom: 18vw;
+    }
+
+    #imgrig {
+        transform: scale(1.3);
     }
 
     #help hr {
